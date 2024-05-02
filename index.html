@@ -1,251 +1,27 @@
-Add this code background animations to thet CSS code <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Shortener with Shooting Star Animation</title>
-    <style>
-        /* URL Shortener styles */
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            margin-top: 50px;
-            z-index: 1; /* Ensure the container is above the background */
-        }
-        select, input[type="text"], button {
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
-            color: #fff; /* Text color */
-            border-radius: 5px;
-            outline: none; /* Remove default outline */
-            transition: background-color 0.3s ease; /* Smooth transition */
-        }
-
-        select:hover, select:focus, button:hover, button:focus {
-            background-color: rgba(255, 255, 255, 0.8); /* Lighter background color on hover and focus */
-        }
-
-        a {
-            color: #fff; /* Text color */
-            text-decoration: none; /* Remove underline */
-            transition: color 0.3s ease; /* Smooth transition */
-        }
-
-        a:hover {
-            color: #ffcc00; /* Change text color on hover */
-        }
-
-        img {
-            max-width: 100%;
-            margin-top: 20px;
-        }
-        /* Shooting Star Animation styles */
-        *
-        {
-            margin: 0;
-            padding:0;
-            box-sizing: border-box;
-        }
-        body{
-            overflow: auto; /* Allow scrolling */
-        }
-        section{
-            position: fixed; /* Change to fixed position */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("https://i.postimg.cc/c1Q3njM0/bg2.jpg") center center / cover fixed; /* Add background size properties */
-            z-index: -1; /* Ensure the background is below the container */
-        }
-
-        @keyframes animateBg{
-            0%,100%{
-                transform: scale(1);
-            }
-            50%{
-                transform: scale(1.2);
-            }
-        }
-
-        span{
-            position: absolute;
-            top:50%;
-            left:50%;
-            width: 4px;
-            height: 4px;
-            background: #fff;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
-            animation: animate 3s linear infinite;
-        }
-        span::before{
-            content:'';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 300px;
-            height: 1px;
-            background: linear-gradient(90deg,#fff,transparent);
-        }
-        @keyframes animate
-        {
-            0%
-            {
-                transform: rotate(315deg) translateX(0);
-                opacity: 1;
-            }
-            70%
-            {
-                opacity: 1;
-            }
-            100%
-            {
-                transform: rotate(315deg) translateX(-1000px);
-                opacity: 0;
-            }
-        }
-        span:nth-child(1){
-            top: 0;
-            right: 0;
-            left: initial;
-            animation-delay: 0s;
-            animation-duration: 1s;
-        }
-        span:nth-child(2){
-            top: 0;
-            right: 80px;
-            left: initial;
-            animation-delay: 0.2s;
-            animation-duration: 3s;
-        }
-        span:nth-child(3){
-            top: 80;
-            right: 0px;
-            left: initial;
-            animation-delay: 0.4s;
-            animation-duration: 2s;
-        }
-        span:nth-child(4){
-            top: 0;
-            right: 180px;
-            left: initial;
-            animation-delay: 0.6s;
-            animation-duration: 1.5s;
-        }
-        span:nth-child(5){
-            top: 0;
-            right: 400px;
-            left: initial;
-            animation-delay: 0.8s;
-            animation-duration: 2.5s;
-        }
-        span:nth-child(6){
-            top: 0;
-            right: 600px;
-            left: initial;
-            animation-delay: 1s;
-            animation-duration: 3s;
-        }
-        span:nth-child(7){
-            top: 300px;
-            right: 0px;
-            left: initial;
-            animation-delay: 1.2s;
-            animation-duration: 1.75s;
-        }
-        span:nth-child(8){
-            top: 0px;
-            right: 700px;
-            left: initial;
-            animation-delay: 1.4s;
-            animation-duration: 1.25s;
-        }
-        span:nth-child(9){
-            top: 0px;
-            right: 1000px;
-            left: initial;
-            animation-delay: 0.75s;
-            animation-duration: 2.25s;
-        }
-        span:nth-child(9){
-            top: 0px;
-            right: 450px;
-            left: initial;
-            animation-delay: 2.75s;
-            animation-duration: 2.75s;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Server Down</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+</style>
 </head>
 <body>
-    <section>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </section>
-    <div class="container">
-        <select id="service">
-            <option value="tinyurl">TinyURL</option>
-            <option value="dagd">da.gd</option>
-            <option value="clckru">Clck.ru</option>
-        </select>
-        <br>
-        <input type="text" id="url" placeholder="Enter URL">
-        <br>
-        <button onclick="shortenUrl()">Shorten URL</button>
-        <br>
-        <a id="shortenedUrl" href="#" target="_blank"></a>
-        <br>
-        <img id="loading" src="https://i.stack.imgur.com/FhHRx.gif" alt="Loading..." style="display: none;">
-    </div>
-    <script>
-        function shortenUrl() {
-            var service = document.getElementById("service").value;
-            var url = document.getElementById("url").value;
-            var apiUrl = "";
-
-            switch (service) {
-                case "tinyurl":
-                    apiUrl = "https://tinyurl.com/api-create.php?url=";
-                    break;
-                case "dagd":
-                    apiUrl = "https://da.gd/s?url=";
-                    break;
-                case "clckru":
-                    apiUrl = "https://clck.ru/--?url=";
-                    break;
-                default:
-                    break;
-            }
-
-            document.getElementById("loading").style.display = "inline";
-
-            fetch(apiUrl + encodeURIComponent(url))
-            .then(response => response.text())
-            .then(data => {
-                var shortenedUrl = data;
-                document.getElementById("shortenedUrl").href = shortenedUrl;
-                document.getElementById("shortenedUrl").textContent = shortenedUrl;
-                document.getElementById("loading").style.display = "none";
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById("loading").style.display = "none";
-            });
-        }
-    </script>
+  <div id="serverDown">Server Down</div>
+  <script>
+    // Optionally, you can add JavaScript functionality here
+  </script>
 </body>
 </html>
